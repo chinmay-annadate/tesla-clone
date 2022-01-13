@@ -6,7 +6,7 @@ import {selectCars} from '../features/car/carSlice';
 import { useSelector } from 'react-redux';
 
 function Header() {
-    var {burgerStatus, setBurgerStatus} = useState(false);
+    var [burgerStatus, setBurgerStatus] = useState(false);
     const cars = useSelector(selectCars);
     console.log(cars);
     return (
@@ -24,12 +24,12 @@ function Header() {
             <RightMenu>
                 <a href="">Shop</a>
                 <a href="">Tesla account</a>
-                <CustomMenu onClick={()=>setBurgerStatus(true)}/>
+                <CustomMenu onClick={()=>{setBurgerStatus(true)}}/>
             </RightMenu>
 
             <BurgerNav show={burgerStatus}>
                 <CloseWrapper>
-                    <CustomClose onClick={()=>setBurgerStatus(false)}/>
+                    <CustomClose onClick={()=>{setBurgerStatus(false)}}/>
                 </CloseWrapper>
                 {cars && cars.map((car, index)=>
                     <li key={index}><a href="#">{car}</a></li>
