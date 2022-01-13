@@ -11,9 +11,11 @@ function Header() {
     console.log(cars);
     return (
         <Container>
-            <a>
-                <img src="/images/logo.svg" alt="" />
-            </a>
+            <Logo>
+                <a href="">
+                    <img src="/images/logo.svg" alt="" />
+                </a>
+            </Logo>
 
             <Menu>
                 {cars && cars.map((car, index)=>
@@ -55,6 +57,10 @@ const Container = styled.div`
     left: 0;
     right: 0;
     z-index: 1;
+`
+
+const Logo = styled.div`
+    cursor: pointer;
 `
 
 const Menu =styled.div`

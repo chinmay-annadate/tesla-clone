@@ -2,30 +2,41 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
 
-function Section({title, description, leftBtText, rightBtText, backgroundImg}) {
+function Section({title, description, d2, leftBtText, rightBtText, backgroundImg, downArrow}) {
     return (
         <Wrap bgImage = {backgroundImg}>
             <Fade bottom>
                 <ItemText>
                     <h1>{title}</h1>
-                    <p>{description}</p>
+                    <p>{description}<a href="#">{d2}</a></p>
                 </ItemText>
             </Fade>
 
             <Buttons>
+                <ButtonGroup>
+                    <Fade left>
+                        <a href="#">
+                            <LeftButton>
+                                {leftBtText}
+                            </LeftButton>
+                        </a>
+                    </Fade>
+
+                    <Fade right>
+                        <a href="#">
+                            { rightBtText && 
+                                <RightButton>
+                                    {rightBtText}
+                                </RightButton>
+                            }
+                        </a>
+                    </Fade>
+                </ButtonGroup>
+
                 <Fade bottom>
-                    <ButtonGroup>
-                        <LeftButton>
-                            {leftBtText}
-                        </LeftButton>
-                        
-                        { rightBtText && 
-                            <RightButton>
-                                {rightBtText}
-                            </RightButton>
-                        }
-                    </ButtonGroup>
-                    <DownArrow src="/images/down-arrow.svg" />
+                    { downArrow &&
+                        <DownArrow src="/images/down-arrow.svg" />
+                    }
                 </Fade>
             </Buttons>
         </Wrap>
@@ -50,6 +61,10 @@ const Wrap = styled.div`
 const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
+
+    a {
+        text-decoration: underline;
+    }
 `
 
 const ButtonGroup = styled.div`
