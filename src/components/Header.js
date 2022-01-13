@@ -6,7 +6,7 @@ import {selectCars} from '../features/car/carSlice';
 import { useSelector } from 'react-redux';
 
 function Header() {
-    var [burgerStatus, setBurgerStatus] = useState(false);
+    const [burgerStatus, setBurgerStatus] = useState(false);
     const cars = useSelector(selectCars);
     console.log(cars);
     return (
