@@ -1,3 +1,3 @@
-## Tesla Homepage Clone - My first React Project
+## Tesla Homepage UI Clone - My first React Project
 - React JS
 - Redux
